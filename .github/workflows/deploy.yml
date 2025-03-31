@@ -50,6 +50,6 @@ jobs:
           exit
 
           # Restart Gunicorn and Nginx
-          sudo systemctl restart gunicorn
+          sudo systemctl restart gunicorn-studybud
           sudo systemctl restart nginx
         EOF
