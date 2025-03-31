@@ -46,6 +46,9 @@ jobs:
           # Collect static files
           python manage.py collectstatic --noinput
 
+          # back to sudo user
+          exit
+
           # Restart Gunicorn and Nginx
           sudo systemctl restart gunicorn
           sudo systemctl restart nginx
