@@ -20,6 +20,7 @@ jobs:
         chmod 600 ~/.ssh/id_rsa
         ssh-keyscan -H 67.219.107.243 >> ~/.ssh/known_hosts
 
+
     - name: Deploy to Vultr
       run: |
         ssh -i ~/.ssh/id_rsa django@67.219.107.243 << 'EOF'
