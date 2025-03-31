@@ -16,13 +16,13 @@ jobs:
     - name: Set up SSH
       run: |
         mkdir -p ~/.ssh
-        echo "${{ secrets.VULTR_SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa_vultr
-        chmod 600 ~/.ssh/id_rsa_vultr
+        echo "${{ secrets.VULTR_SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
         ssh-keyscan -H 67.219.107.243 >> ~/.ssh/known_hosts
 
     - name: Deploy to Vultr
       run: |
-        ssh -i ~/.ssh/id_rsa_vultr linuxuser@67.219.107.243 << 'EOF'
+        ssh -i ~/.ssh/id_rsa linuxuser@67.219.107.243 << 'EOF'
           #cd /root/my-django-app
           cd /home/django/studybud
 
