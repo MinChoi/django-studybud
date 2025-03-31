@@ -24,6 +24,10 @@ jobs:
     - name: Deploy to Vultr
       run: |
         ssh -i ~/.ssh/id_rsa linuxuser@67.219.107.243 << 'EOF'
+        
+          # change user
+          sudo su django
+        
           #cd /root/my-django-app
           cd /home/django/studybud
 
